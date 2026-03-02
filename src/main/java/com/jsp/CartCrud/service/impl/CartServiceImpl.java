@@ -3,13 +3,15 @@ package com.jsp.CartCrud.service.impl;
 import com.jsp.CartCrud.model.Cart;
 import com.jsp.CartCrud.repository.CartRepository;
 import com.jsp.CartCrud.service.CartService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor    //using this to don't need to use autowired
 public class CartServiceImpl implements CartService {
-    @Autowired
-    CartRepository cartRepository;
+//    @Autowired
+    private final CartRepository cartRepository;
 
     @Override
     public Cart saveCart(Cart cart)

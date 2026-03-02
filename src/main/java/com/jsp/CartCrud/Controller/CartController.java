@@ -2,14 +2,16 @@ package com.jsp.CartCrud.Controller;
 
 import com.jsp.CartCrud.model.Cart;
 import com.jsp.CartCrud.service.CartService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor    //using this to don't need to use autowired
 public class CartController {
 
-    @Autowired
-    CartService service;
+//    @Autowired
+    private final CartService service;
 
     @PostMapping("/cart/save")
     public Cart save(@RequestBody Cart cart)
