@@ -2,6 +2,8 @@ package com.jsp.CartCrud.Controller;
 
 import com.jsp.CartCrud.model.Cart;
 import com.jsp.CartCrud.service.CartService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,12 @@ public class CartController {
 
 //    @Autowired
     private final CartService service;
+
+    //creating documentation of project of Student-crud1
+    @Operation(summary = "create object of Cart")
+    @ApiResponse(responseCode = "201", description = "it will create object")
+    @ApiResponse(responseCode = "400", description = "invalid data")
+    @ApiResponse(responseCode = "500", description = "internal server error")
 
 //    @PostMapping("/cart/save")
     @PostMapping
